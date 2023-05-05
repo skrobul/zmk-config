@@ -64,6 +64,7 @@
 &kp LSHFT     &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M    &kp COMMA    &kp DOT    &kp FSLH    &lt SYMBOL ESC
                          &kp LGUI  &mo 1  &lt SYMBOL SPACE    &kp RET  &mo 2   &kp RALT
             >;
+            label = "Default";
         };
 
         lower_layer {
@@ -79,6 +80,7 @@
      &kp    LSHFT    &trans             &trans             &trans             &tmux_copy             &tmux_paste             &trans         &kp PG_DN    &kp PG_UP    &tmux_prev          &tmux_next         &kp PSCRN
                                              &kp LGUI      &trans     &kp SPACE       &kp RET      &trans  &kp RALT
             >;
+            label = "Lower";
         };
 
         raise_layer {
@@ -94,6 +96,7 @@
         &kp LSHFT    &trans         &trans       &trans         &trans         &kp    C_SLEEP    &kp UNDER    &kp PLUS     &kp LBRC           &kp RBRC    &kp PIPE    &kp TILDE
                                     &kp LGUI &trans  &kp SPACE &kp RET &trans  &kp RALT
             >;
+            label = "Raise";
         };
             
         wm_layer {
@@ -110,6 +113,7 @@
         &trans     &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &bt    BT_CLR
                               &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2   &kp RALT
             >;
+            label = "WINMGMT";
         };
         
         symbol_layer {
@@ -126,6 +130,7 @@
             &trans        &kp CARET  &kp SLASH  &kp STAR  &kp BSLH   &parentdir        &kp UNDER  &kp DOLLAR  &kp LBRC  &kp RBRC  &kp AT_SIGN  &trans
                                           &kp LGUI  &mo 1  &kp SPACE                  &kp RET  &mo 2   &kp LALT
             >;
+            label = "Symbol";
         };
     };
 };

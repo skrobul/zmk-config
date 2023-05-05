@@ -1,0 +1,217 @@
+layout: {qmk_keyboard: crkbd/rev1, qmk_layout: LAYOUT_split_3x6_3}
+layers:
+  Default:
+  - {t: TAB, h: WINMGMT}
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - LCTRL
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - LSHFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: ESC, h: Symbol}
+  - LGUI
+  - Lower
+  - {t: SPACE, h: Symbol}
+  - RET
+  - Raise
+  - RALT
+  Lower:
+  - TAB
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - BSPC
+  - ''
+  - BT 0
+  - BT 1
+  - BT 2
+  - BT 3
+  - BT 4
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - HOME
+  - END
+  - LSHFT
+  - ''
+  - ''
+  - ''
+  - TMUX Copy
+  - TMUX Paste
+  - ''
+  - PG DN
+  - PG UP
+  - TMUX Prev
+  - TMUX Next
+  - PSCRN
+  - LGUI
+  - {type: held}
+  - SPACE
+  - RET
+  - ''
+  - RALT
+  Raise:
+  - TAB
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - KP MULTIPLY
+  - (
+  - )
+  - BSPC
+  - LCTRL
+  - ''
+  - ''
+  - DEL
+  - ''
+  - ''
+  - '-'
+  - '='
+  - '['
+  - ']'
+  - \
+  - '`'
+  - LSHFT
+  - ''
+  - ''
+  - ''
+  - ''
+  - SLEEP
+  - _
+  - +
+  - '{'
+  - '}'
+  - '|'
+  - '~'
+  - LGUI
+  - ''
+  - SPACE
+  - RET
+  - {type: held}
+  - RALT
+  WINMGMT:
+  - {type: held}
+  - LG(1)
+  - LG(2)
+  - LG(3)
+  - LG(4)
+  - LG(5)
+  - LG(6)
+  - LG(7)
+  - LG(8)
+  - LG(9)
+  - LG(0)
+  - ''
+  - ''
+  - F1
+  - F2
+  - F2
+  - F3
+  - F4
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BT CLR
+  - LGUI
+  - Lower
+  - SPACE
+  - RET
+  - Raise
+  - RALT
+  Symbol:
+  - SPACE
+  - '`'
+  - <
+  - '>'
+  - '"'
+  - '~'
+  - '&'
+  - ''''
+  - '['
+  - ']'
+  - '%'
+  - ''
+  - ''
+  - '!'
+  - '-'
+  - +
+  - '='
+  - '#'
+  - '|'
+  - ':'
+  - (
+  - )
+  - '?'
+  - ''
+  - ''
+  - ^
+  - /
+  - '*'
+  - \
+  - ../
+  - _
+  - $
+  - '{'
+  - '}'
+  - '@'
+  - {type: held}
+  - LGUI
+  - Lower
+  - SPACE
+  - RET
+  - Raise
+  - LALT
