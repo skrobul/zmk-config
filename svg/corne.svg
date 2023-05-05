@@ -271,8 +271,7 @@ path {
 <rect rx="6.0" ry="6.0" x="592.0" y="702.0000000000001" width="52.0" height="52.0" class=""/>
 <text x="618.0" y="728.0000000000001" class="tap">&amp;</text>
 <rect rx="6.0" ry="6.0" x="648.0" y="696.4000000000001" width="52.0" height="52.0" class=""/>
-<text x="674.0" y="722.4000000000001" class="tap">
-<tspan x="674.0" dy="-0.6em">KP</tspan><tspan x="674.0" dy="1.2em">MULTIPLY</tspan></text>
+<text x="674.0" y="722.4000000000001" class="tap">*</text>
 <rect rx="6.0" ry="6.0" x="704.0" y="702.0000000000001" width="52.0" height="52.0" class=""/>
 <text x="730.0" y="728.0000000000001" class="tap">(</text>
 <rect rx="6.0" ry="6.0" x="760.0" y="713.2" width="52.0" height="52.0" class=""/>
