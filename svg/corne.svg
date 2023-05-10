@@ -227,15 +227,15 @@ path {
 <text x="338.0" y="526.4000000000001" class="tap">
 <tspan x="338.0" dy="-0.6em">TMUX</tspan><tspan x="338.0" dy="1.2em">Paste</tspan></text>
 <rect rx="6.0" ry="6.0" x="536.0" y="500.4000000000001" width="52.0" height="52.0" class=""/>
+<text x="562.0" y="526.4000000000001" class="tap">
+<tspan x="562.0" dy="-0.6em">PG</tspan><tspan x="562.0" dy="1.2em">DN</tspan></text>
 <rect rx="6.0" ry="6.0" x="592.0" y="494.80000000000007" width="52.0" height="52.0" class=""/>
 <text x="618.0" y="520.8000000000001" class="tap">
-<tspan x="618.0" dy="-0.6em">PG</tspan><tspan x="618.0" dy="1.2em">DN</tspan></text>
+<tspan x="618.0" dy="-0.6em">PG</tspan><tspan x="618.0" dy="1.2em">UP</tspan></text>
 <rect rx="6.0" ry="6.0" x="648.0" y="489.20000000000005" width="52.0" height="52.0" class=""/>
 <text x="674.0" y="515.2" class="tap">
-<tspan x="674.0" dy="-0.6em">PG</tspan><tspan x="674.0" dy="1.2em">UP</tspan></text>
+<tspan x="674.0" dy="-0.6em">TMUX</tspan><tspan x="674.0" dy="1.2em">Prev</tspan></text>
 <rect rx="6.0" ry="6.0" x="704.0" y="494.80000000000007" width="52.0" height="52.0" class=""/>
-<text x="730.0" y="520.8000000000001" class="tap">
-<tspan x="730.0" dy="-0.6em">TMUX</tspan><tspan x="730.0" dy="1.2em">Prev</tspan></text>
 <rect rx="6.0" ry="6.0" x="760.0" y="506.0" width="52.0" height="52.0" class=""/>
 <text x="786.0" y="532.0" class="tap">
 <tspan x="786.0" dy="-0.6em">TMUX</tspan><tspan x="786.0" dy="1.2em">Next</tspan></text>
