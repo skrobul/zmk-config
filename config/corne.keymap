@@ -11,8 +11,8 @@
 #define DEFAULT 0
 #define LOWER 1
 #define RAISE 2
-#define WM 3
-#define SYMBOL 4
+#define ADJUST 3
+#define WM 4
 
 / {
     macros {
@@ -48,6 +48,14 @@
         };
     };
 
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <LOWER RAISE>;
+            then-layer = <ADJUST>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -59,46 +67,64 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&lt WM TAB    &kp Q    &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I        &kp O      &kp P       &kp BSPC
-&kp LCTRL     &kp A    &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K        &kp L      &kp SEMI    &kp SQT
-&kp LSHFT     &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M    &kp COMMA    &kp DOT    &kp FSLH    &lt SYMBOL ESC
-                         &kp LGUI  &mo 1  &lt SYMBOL SPACE    &kp RET  &mo 2   &kp RALT
+            &lt WM TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
+            &kp LCTRL   &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+            &kp LSHFT   &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                         &kp LGUI  &mo LOWER  &kp SPACE    &kp RET  &mo RAISE   &kp RALT
             >;
-            label = "Default";
+            label = "Base";
         };
 
         lower_layer {
             // -----------------------------------------------------------------------------------------
             // | TAB  | 1   | 2   | 3   | 4    | 5    |  | 6    | 7    | 8     | 9   | 0     | BKSP  |
-            // |      | BT1 | BT2 | BT3 | BT4  | BT5  |  | LFT  | DWN  | UP    | RGT | HOM   | END   |
+            // | CTRL | BT1 | BT2 | BT3 | BT4  | BT5  |  | LFT  | DWN  | UP    | RGT | HOM   | END   |
             // | SHFT |     |     |     | TCPY | TPST |  | PGDN | PGUP | TPREV |     | TNEXT | PSCRN |
             //                    | GUI |      | SPC  |  | ENT |      | ALT  |
 
             bindings = <
-     &kp    TAB    &kp    N1        &kp    N2        &kp    N3        &kp        N4        &kp         N5        &kp N6     &kp N7     &kp        N8  &kp    N9     &kp        N0    &kp BSPC
-     &trans        &bt    BT_SEL 0  &bt    BT_SEL 1  &bt    BT_SEL 2  &bt        BT_SEL 3  &bt         BT_SEL 4  &kp LEFT   &kp DOWN   &kp        UP  &kp    RIGHT  &kp        HOME  &kp END
-     &kp    LSHFT  &trans           &trans           &trans           &tmux_copy           &tmux_paste           &kp PG_DN  &kp PG_UP  &tmux_prev     &trans        &tmux_next       &kp PSCRN
-                                             &kp LGUI      &trans     &kp SPACE       &kp RET      &trans  &kp RALT
+            &kp    TAB    &kp    N1        &kp    N2        &kp    N3        &kp        N4        &kp         N5        &kp N6     &kp N7     &kp        N8  &kp    N9     &kp        N0    &kp BSPC
+            &trans        &bt    BT_SEL 0  &bt    BT_SEL 1  &bt    BT_SEL 2  &bt        BT_SEL 3  &bt         BT_SEL 4  &kp LEFT   &kp DOWN   &kp        UP  &kp    RIGHT  &kp        HOME  &kp END
+            &kp    LSHFT  &trans           &trans           &trans           &tmux_copy           &tmux_paste           &kp PG_DN  &kp PG_UP  &tmux_prev     &trans        &tmux_next       &kp PSCRN
+                                           &kp LGUI      &trans     &kp SPACE       &kp RET      &trans  &kp RALT
             >;
             label = "Lower";
         };
 
         raise_layer {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            //  | TAB  |  `  |  <  |  >  |  "  |   ~   |    |   &    |  '  |  [  |  ]  |  %  | BKSP
+            //  | CTRL |  !  |  -  |  +  |  =  |   #   |    |  PIPE  |  :  |  (  |  )  |  ?  |     |
+            //  | SHFT |  ^  |  /  |  *  |  \  |  ../  |    |   _    |  $  |  {  |  }  |  @  | ESC |
+            //                   | GUI | LWR |   SPC |    | ENT    | RSE | ALT |
+
 
             bindings = <
-        &kp TAB      &kp    EXCL    &kp    AT    &kp    HASH    &kp    DLLR    &kp    PRCNT      &kp CARET    &kp AMPS     &kp STAR           &kp LPAR    &kp RPAR    &kp BSPC
-        &kp LCTRL    &trans         &trans       &kp    DEL     &trans         &trans            &kp MINUS    &kp EQUAL    &kp LBKT           &kp RBKT    &kp BSLH    &kp GRAVE
-        &kp LSHFT    &trans         &trans       &trans         &trans         &kp    C_SLEEP    &kp UNDER    &kp PLUS     &kp LBRC           &kp RBRC    &kp PIPE    &kp TILDE
-                                    &kp LGUI &trans  &kp SPACE &kp RET &trans  &kp RALT
+            &kp    SPACE  &kp GRAVE  &kp LT     &kp GT    &kp DQT    &kp        TILDE  &kp AMPS   &kp SQT     &kp LBKT  &kp RBKT  &kp PRCNT    &trans
+            &trans        &kp EXCL   &kp MINUS  &kp PLUS  &kp EQUAL  &kp        HASH   &kp PIPE   &kp COLON   &kp LPAR  &kp RPAR  &kp QMARK    &trans
+            &trans        &kp CARET  &kp SLASH  &kp STAR  &kp BSLH   &parentdir        &kp UNDER  &kp DOLLAR  &kp LBRC  &kp RBRC  &kp AT_SIGN  &trans
+                                          &kp LGUI  &mo LOWER  &kp SPACE                  &kp RET  &mo RAISE   &kp LALT
             >;
             label = "Raise";
         };
             
+        adjust_layer {
+            // -----------------------------------------------------------------------------------------
+            // | TAB  | BT1 | BT2 |  BT3   | BT4 | BT5 |  |      |         |       |      |  |  |
+            // | CTRL |     | SLP |        |     |     |  | PREV | VOLDOWN | VOLUP | NEXT |  |  |
+            // | SHFT |     |     | BT_CLR |     |     |  |      |         |       |      |  |  |
+            //                    |    GUI | LWR | SPC |  | ENT  | RSE     | ALT   |
+
+            bindings = <
+        &kp    TAB    &bt    BT_SEL 0  &bt    BT_SEL 1  &bt    BT_SEL 2  &bt    BT_SEL 3  &bt    BT_SEL 4  &trans         &trans           &trans           &trans         &trans       &trans
+        &trans        &trans           &kp    C_SLEEP   &trans           &trans           &trans           &kp    C_PREV  &kp    C_VOL_DN  &kp    C_VOL_UP  &kp    C_NEXT  &trans       &trans
+        &trans        &trans           &trans           &bt    BT_CLR    &trans           &trans           &trans         &trans           &trans           &trans         &trans       &trans
+        &kp    LSHFT  &trans           &trans           &trans           &trans           &kp    C_SLEEP   &kp    UNDER   &kp    PLUS      &kp    LBRC      &kp    RBRC    &kp    PIPE  &kp    TILDE
+                                    &kp LGUI &trans  &kp SPACE &kp RET &trans  &kp RALT
+            >;
+            label = "Adjust";
+        };
+
         wm_layer {
             // -----------------------------------------------------------------------------------------
             // |  | W1 | W2 | W3  | W4  | W5  |  | W6  | W7  | W8  | W9 | W0 |  |
@@ -111,26 +137,9 @@
         &trans     &kp    LG(N1)    &kp    LG(N2)    &kp    LG(N3)    &kp    LG(N4)    &kp    LG(N5)    &kp    LG(N6)    &kp    LG(N7)    &kp    LG(N8)    &kp    LG(N9)    &kp    LG(N0)    &trans
         &trans     &kp    F1        &kp    F2        &kp    F2        &kp    F3        &kp    F4        &kp    F6        &kp    F7        &kp    F8        &kp    F9        &kp    F10       &trans
         &trans     &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &bt    BT_CLR
-                              &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2   &kp RALT
+                                                                      &kp LGUI  &mo LOWER  &kp SPACE    &kp RET  &mo RAISE   &kp RALT
             >;
-            label = "WINMGMT";
-        };
-        
-        symbol_layer {
-            // -----------------------------------------------------------------------------------------
-            //  |    |  `  |  <  |  >  |  "  |   ~   |    |   &    |  '  |  [  |  ]  |  %  |    |
-            //  |    |  !  |  -  |  +  |  =  |   #   |    |  PIPE  |  :  |  (  |  )  |  ?  |    |
-            //  |    |  ^  |  /  |  *  |  \  |  ../  |    |   _    |  $  |  {  |  }  |  @  |    |
-            //                   | GUI | LWR |   SPC |    | ENT    | RSE | ALT |
-
-
-            bindings = <
-            &kp    SPACE  &kp GRAVE  &kp LT     &kp GT    &kp DQT    &kp        TILDE  &kp AMPS   &kp SQT     &kp LBKT  &kp RBKT  &kp PRCNT    &trans
-            &trans        &kp EXCL   &kp MINUS  &kp PLUS  &kp EQUAL  &kp        HASH   &kp PIPE   &kp COLON   &kp LPAR  &kp RPAR  &kp QMARK    &trans
-            &trans        &kp CARET  &kp SLASH  &kp STAR  &kp BSLH   &parentdir        &kp UNDER  &kp DOLLAR  &kp LBRC  &kp RBRC  &kp AT_SIGN  &trans
-                                          &kp LGUI  &mo 1  &kp SPACE                  &kp RET  &mo 2   &kp LALT
-            >;
-            label = "Symbol";
+            label = "Win";
         };
     };
 };
