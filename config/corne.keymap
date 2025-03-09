@@ -93,15 +93,15 @@
 
         raise_layer {
             // -----------------------------------------------------------------------------------------
-            //  | TAB  |  `  |  <  |  >  |  "  |   ~   |    |   &    |  '  |  [  |  ]  |  %  | BKSP
-            //  | CTRL |  !  |  -  |  +  |  =  |   #   |    |  PIPE  |  :  |  (  |  )  |  ?  |     |
+            //  | TAB  |  `  |  <  |  >  |  "  |   ~   |    |   &    |  '  |  [  |  ]  |  %  | BACKWARD
+            //  | CTRL |  !  |  -  |  +  |  =  |   #   |    |  PIPE  |  :  |  (  |  )  |  ?  | FORWARD |
             //  | SHFT |  ^  |  /  |  *  |  \  |  ../  |    |   _    |  $  |  {  |  }  |  @  | ESC |
             //                   | GUI | LWR |   SPC |    | ENT    | RSE | ALT |
 
 
             bindings = <
-            &kp    SPACE  &kp GRAVE  &kp LT     &kp GT    &kp DQT    &kp        TILDE  &kp AMPS   &kp SQT     &kp LBKT  &kp RBKT  &kp PRCNT    &trans
-            &trans        &kp EXCL   &kp MINUS  &kp PLUS  &kp EQUAL  &kp        HASH   &kp PIPE   &kp COLON   &kp LPAR  &kp RPAR  &kp QMARK    &trans
+            &kp    SPACE  &kp GRAVE  &kp LT     &kp GT    &kp DQT    &kp        TILDE  &kp AMPS   &kp SQT     &kp LBKT  &kp RBKT  &kp PRCNT    &kp LA(B)
+            &trans        &kp EXCL   &kp MINUS  &kp PLUS  &kp EQUAL  &kp        HASH   &kp PIPE   &kp COLON   &kp LPAR  &kp RPAR  &kp QMARK    &kp LA(F)
             &trans        &kp CARET  &kp SLASH  &kp STAR  &kp BSLH   &parentdir        &kp UNDER  &kp DOLLAR  &kp LBRC  &kp RBRC  &kp AT_SIGN  &trans
                                           &kp LGUI  &mo LOWER  &kp SPACE                  &kp RET  &mo RAISE   &kp LALT
             >;
