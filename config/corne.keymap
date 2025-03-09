@@ -124,7 +124,7 @@
             &kp    SPACE  &kp GRAVE  &kp LT     &kp GT    &kp DQT    &kp        TILDE  &kp AMPS   &kp SQT     &kp LBKT  &kp RBKT  &kp PRCNT    &trans
             &trans        &kp EXCL   &kp MINUS  &kp PLUS  &kp EQUAL  &kp        HASH   &kp PIPE   &kp COLON   &kp LPAR  &kp RPAR  &kp QMARK    &trans
             &trans        &kp CARET  &kp SLASH  &kp STAR  &kp BSLH   &parentdir        &kp UNDER  &kp DOLLAR  &kp LBRC  &kp RBRC  &kp AT_SIGN  &trans
-                                          &kp LGUI  &mo 1  &kp SPACE                  &kp RET  &mo 2   &kp RALT
+                                          &kp LGUI  &mo 1  &kp SPACE                  &kp RET  &mo 2   &kp LALT
             >;
         };
     };
