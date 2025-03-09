@@ -19,25 +19,25 @@
             compatible = "zmk,behavior-macro";
             label = "TMUX_COPY";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp LEFT_BRACKET>;
+            bindings = <&kp LC(B)>, <&kp LEFT_BRACKET>;
         };
         tmux_paste: tmux_paste {
             compatible = "zmk,behavior-macro";
             label = "TMUX_PASTE";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp RIGHT_BRACKET>;
+            bindings = <&kp LC(B)>, <&kp RIGHT_BRACKET>;
         };
         tmux_next: tmux_next {
             compatible = "zmk,behavior-macro";
             label = "TMUX_NEXT";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp N>;
+            bindings = <&kp LC(B)>, <&kp N>;
         };
         tmux_prev: tmux_prev {
             compatible = "zmk,behavior-macro";
             label = "TMUX_PREV";
             #binding-cells = <0>;
-            bindings = <&kp LC(B) &kp P>;
+            bindings = <&kp LC(B)>, <&kp P>;
         };
     };
 
@@ -62,13 +62,13 @@
         lower_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT | HOM | END  |
+            // |      | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT | HOM | END  |
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
    &kp TAB        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &kp N6      &kp N7    &kp N8     &kp N9    &kp N0   &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT  &kp HOME    &kp END
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT  &kp HOME    &kp END
  &kp LSHFT        &trans        &trans        &trans    &tmux_copy   &tmux_paste    &tmux_prev  &tmux_next    &trans     &trans    &trans  &kp PSCRN
                                             &kp LGUI        &trans     &kp SPACE       &kp RET      &trans  &kp RALT
             >;
@@ -99,7 +99,7 @@
             bindings = <
         &trans      &kp    LG(N1)  &kp    LG(N2)  &kp    LG(N3)  &kp    LG(N4)  &kp    LG(N5)  &kp LG(N6) &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(N0) &trans
         &trans      &kp    F1  &kp    F2  &kp    F2  &kp    F3  &kp    F4  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
-        &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &bt BT_CLR
                          &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2   &kp RALT
             >;
         };
